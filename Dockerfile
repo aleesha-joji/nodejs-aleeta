@@ -1,9 +1,6 @@
-FROM node:alpine
 
-EXPOSE 3000
-
-WORKDIR /app
-
-COPY . /app
-
-CMD ["node", "app.js"]
+FROM node:16.2.0
+HEALTHCHECK --interval=5s \
+            --timeout=5s \
+            CMD curl -f http://127.0.0.1:8000 || exit 1
+EXPOSE 8000
