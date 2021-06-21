@@ -31,23 +31,25 @@ pipeline {
                     }
                 }
             }
-            //stage('image pull') {
-                //steps {
-                    //script{
-                        //sh 'docker pull anandr72/nodeapp:latest'
-                    //}
-               // }
-            //}
-            stage('Test image') {
-                steps {
-                    script{
-                            //sh 'test.js'
-                        exec(App.inside) {
-                        //echo "Test Passed"
-                        }
-                    }
-                }
-            }
+//             stage('image pull') {
+//                 steps {
+//                     script{
+//                         sh 'docker pull anandr72/nodeapp:latest'
+//                     }
+//                }
+//             }
+                
+                
+//             stage('Test image') {
+//                 steps {
+//                     script{
+//                             //sh 'test.js'
+//                         exec(App.inside) {
+//                         //echo "Test Passed"
+//                         }
+//                     }
+//                 }
+//             }
             stage('Push Image'){
                 steps {
                     script{
