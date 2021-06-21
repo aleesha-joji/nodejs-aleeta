@@ -1,18 +1,22 @@
 {
-  "name": "playground",
+  "name": "crudsinfotech-nodeapp",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "A Hello World HTTP server using Node JS",
+  "main": "main.js",
   "scripts": {
-    "test": "jasmine-node spec"
+    "test": "node test.js",
+    "start": "node main.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rchidana/NodeApp"
+  },
+  "keywords": [
+    "node",
+    "docker",
+    "dockerfile"
+  ],
+  "author": "crudsinfotechng@gmail.com",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.3",
-    "request": "^2.85.0"
-  },
-  "devDependencies": {
-    "jasmine-node": "^1.14.5"
-  }
+  "devDependencies": { "test": ">=0.6.0" }
 }
