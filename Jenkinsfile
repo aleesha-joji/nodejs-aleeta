@@ -44,7 +44,7 @@ pipeline {
                             //sh 'test.js'
                         exec(App.inside) {
                         //echo "Test Passed"
-                        //}
+                        }
                     }
                 }
             }
