@@ -41,8 +41,8 @@ pipeline {
             stage('Test image') {
                 steps {
                     script{
-                            sh 'test.js'
-                        //App.inside {
+                            //sh 'test.js'
+                        exec(App.inside) {
                         //echo "Test Passed"
                         //}
                     }
