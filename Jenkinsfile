@@ -52,15 +52,17 @@ pipeline {
             stage('Push Image'){
                 steps {
                     script{
-                        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub'){
-                        App.push("${env.BUILD_NUMBER}")
-                        App.push("latest")
-                    }
+                            docker.withTool('docker') {
+                                docker.withRegistry('https://registry.hub.docker.com', 'docker-hub'){
+                                App.push("${env.BUILD_NUMBER}")
+                                App.push("latest")
+                                }
                     echo "Trying to push docker build to DockerHub"
-                }
+                            }               
+                    }
             }
-        }
+     }
             
-    }
+}
     
 }
