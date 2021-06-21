@@ -2,7 +2,7 @@ pipeline {
         agent {label 'chrome'}
         tools { 
         nodejs "NodeJS"
-        
+        dockerTool 'docker'
         }
 
         environment {
@@ -23,7 +23,7 @@ pipeline {
             stage('Build Image') {
                   steps {
                     script{
-                        docker.withTool('docker')
+                       
                         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub'){
                         docker.build("anandr72/nodeapp")
 
