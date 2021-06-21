@@ -24,7 +24,10 @@ pipeline {
                   steps {
                     script{
                         docker.withTool('docker')
-                        App = docker.build("anandr72/nodeapp")
+                        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub'){
+                        docker.build("anandr72/nodeapp")
+
+                       
                     }
                 }
             }
