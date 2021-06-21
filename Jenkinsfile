@@ -2,7 +2,7 @@ pipeline {
         agent {label 'chrome'}
         tools { 
         nodejs "NodeJS"
-        dockerTool 'docker'
+        
         }
 
         environment {
@@ -15,7 +15,7 @@ pipeline {
                     script {
                         checkout scm
                         sh 'node --version' 
-                        sh 'docker --version'
+                        
                         sh  'npm --version'
                     }
                 }
@@ -23,6 +23,7 @@ pipeline {
             stage('Build Image') {
                   steps {
                     script{
+                        docker.withTool('docker')
                         App = docker.build("anandr72/nodeapp")
                     }
                 }
