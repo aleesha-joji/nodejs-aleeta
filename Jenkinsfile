@@ -27,7 +27,7 @@ pipeline {
                         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub'){
                         docker.build("anandr72/nodeapp")
 
-                       
+                        }
                     }
                 }
             }
@@ -61,4 +61,4 @@ pipeline {
             
     }
     
-    }
+}
