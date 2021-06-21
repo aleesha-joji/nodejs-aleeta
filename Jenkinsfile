@@ -25,7 +25,7 @@ pipeline {
                     script{
                        
                         docker.withRegistry('https://registry.hub.docker.com'){
-                        docker.build("anandr72/nodeapp")
+                        App= docker.build("anandr72/nodeapp")
 
                         }
                     }
@@ -40,16 +40,15 @@ pipeline {
 //             }
                 
                 
-//             stage('Test image') {
-//                 steps {
-//                     script{
-//                             //sh 'test.js'
-//                         exec(App.inside) {
-//                         //echo "Test Passed"
-//                         }
-//                     }
-//                 }
-//             }
+            stage('Test image') {
+                steps {
+                    script{
+                        App.inside {
+                        echo "Test Passed"
+                        }
+                    }
+                }
+            }
             stage('Push Image'){
                 steps {
                     script{
